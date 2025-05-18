@@ -3,45 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bewusst einkaufen – Checkliste</title>
+  <title>🛍️ Bewusst einkaufen – Checkliste</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22green%22><path d=%22M6 2l1.5 4h9L18 2H6zm0 6h12l-1.5 14h-9L6 8zm5 2v8h2v-8h-2z%22/></svg>">
   <style>
+    :root {
+      --main-bg: #f0f8ff;
+      --box-bg: #ffffff;
+      --primary: #006699;
+      --secondary: #338866;
+      --text: #333333;
+      --table-header: #e6f2ff;
+    }
+
     body {
-      font-family: sans-serif;
+      font-family: system-ui, sans-serif;
       margin: 1rem;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: var(--main-bg);
+      color: var(--text);
     }
-    h1, h2 {
-      color: #004080;
+
+    h1 {
+      color: var(--primary);
     }
+
+    h2 {
+      color: var(--secondary);
+    }
+
     ul {
       list-style-type: square;
       padding-left: 1.5rem;
     }
+
     section {
-      background: white;
+      background: var(--box-bg);
       padding: 1rem;
       margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
+
     .category-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 0.5rem;
     }
-    .category-table th, .category-table td {
+
+    .category-table th,
+    .category-table td {
       padding: 0.5rem;
       border: 1px solid #ccc;
     }
+
     .category-table th {
-      background-color: #e0ecff;
+      background-color: var(--table-header);
       text-align: left;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --main-bg: #1c1c1c;
+        --box-bg: #2a2a2a;
+        --primary: #5fd3f3;
+        --secondary: #6de1a8;
+        --text: #f0f0f0;
+        --table-header: #333;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🌍 Bewusst online einkaufen – Deine Checkliste</h1>
+  <h1>🛍️ Bewusst online einkaufen – Deine Checkliste</h1>
 
   <section>
     <h2>1. Kurz nachdenken</h2>
@@ -55,7 +87,7 @@
     <h2>2. Preise vergleichen</h2>
     <ul>
       <li><strong>Idealo.de</strong> oder <strong>Geizhals.de</strong> nutzen</li>
-      <li>Filter setzen: 
+      <li>Filter setzen:
         <ul>
           <li>Nur seriöse Shops</li>
           <li>Keine Marketplace-Händler</li>
