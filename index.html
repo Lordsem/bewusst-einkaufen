@@ -13,21 +13,47 @@
       --secondary: #338866;
       --text: #333333;
       --table-header: #e6f2ff;
+      --accent: #0077cc;
     }
 
     body {
       font-family: system-ui, sans-serif;
-      margin: 1rem;
+      margin: 1rem auto;
+      max-width: 900px;
       background-color: var(--main-bg);
       color: var(--text);
+      line-height: 1.6;
     }
 
     h1 {
       color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 0.2em;
     }
 
     h2 {
       color: var(--secondary);
+      font-size: 1.4rem;
+      margin-top: 1em;
+    }
+
+    nav {
+      background: var(--box-bg);
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+    }
+
+    nav a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     ul {
@@ -60,6 +86,22 @@
       text-align: left;
     }
 
+    .print-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .print-btn:hover {
+      background-color: #004466;
+    }
+
     @media (prefers-color-scheme: dark) {
       :root {
         --main-bg: #1c1c1c;
@@ -68,6 +110,16 @@
         --secondary: #6de1a8;
         --text: #f0f0f0;
         --table-header: #333;
+        --accent: #91d6ff;
+      }
+
+      .print-btn {
+        background-color: #5fd3f3;
+        color: #000;
+      }
+
+      .print-btn:hover {
+        background-color: #40b3d9;
       }
     }
   </style>
@@ -75,7 +127,18 @@
 <body>
   <h1>🛍️ Bewusst online einkaufen – Deine Checkliste</h1>
 
-  <section>
+  <nav>
+    <a href="#nachdenken">Nachdenken</a>
+    <a href="#vergleichen">Preise</a>
+    <a href="#shops">Shops</a>
+    <a href="#zahlung">Zahlung</a>
+    <a href="#umwelt">Lieferung</a>
+    <a href="#favoriten">Favoriten</a>
+  </nav>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Checkliste drucken</button>
+
+  <section id="nachdenken">
     <h2>1. Kurz nachdenken</h2>
     <ul>
       <li>Brauche ich das wirklich – oder ist es nur praktisch?</li>
@@ -83,7 +146,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="vergleichen">
     <h2>2. Preise vergleichen</h2>
     <ul>
       <li><strong>Idealo.de</strong> oder <strong>Geizhals.de</strong> nutzen</li>
@@ -98,7 +161,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="shops">
     <h2>3. Geeignete Shops wählen</h2>
     <table class="category-table">
       <tr><th>Kategorie</th><th>Empfohlene Shops</th></tr>
@@ -110,7 +173,7 @@
     </table>
   </section>
 
-  <section>
+  <section id="zahlung">
     <h2>4. Zahlung & Rückgabe</h2>
     <ul>
       <li>Kauf auf Rechnung möglich?</li>
@@ -119,7 +182,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="umwelt">
     <h2>5. Lieferung & Umwelt</h2>
     <ul>
       <li>Klimaneutraler Versand verfügbar?</li>
@@ -128,7 +191,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="favoriten">
     <h2>6. Eigene Favoriten pflegen</h2>
     <ul>
       <li>Lieblingsshops bookmarken</li>
